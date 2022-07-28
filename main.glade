@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.22.2 -->
+<interface>
+  <requires lib="gtk+" version="3.20"/>
+  <object class="GtkImage" id="icon0">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">icons/smoking.png</property>
+  </object>
+  <object class="GtkImage" id="icon1">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">icons/bath.png</property>
+  </object>
+  <object class="GtkImage" id="icon2">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">icons/house_with_garden.png</property>
+  </object>
+  <template class="Gjs_PendulumMainWindow" parent="GtkWindow">
+    <property name="can_focus">False</property>
+    <property name="type">popup</property>
+    <property name="window_position">center-always</property>
+    <property name="destroy_with_parent">True</property>
+    <property name="type_hint">splashscreen</property>
+    <property name="skip_taskbar_hint">True</property>
+    <property name="urgency_hint">True</property>
+    <property name="gravity">center</property>
+    <child>
+      <object class="GtkButtonBox" id="statusButtons">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="spacing">12</property>
+        <property name="layout_style">center</property>
+        <child>
+          <object class="GtkButton" id="statusButton0">
+            <property name="label" translatable="yes">Smoking...</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="image">icon0</property>
+            <property name="image_position">top</property>
+            <property name="always_show_image">True</property>
+            <signal name="clicked" handler="_onStatusButton0Clicked" object="Gjs_PendulumMainWindow" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="statusButton1">
+            <property name="label" translatable="yes">W.C</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="image">icon1</property>
+            <property name="image_position">top</property>
+            <property name="always_show_image">True</property>
+            <signal name="clicked" handler="_onStatusButton1Clicked" object="Gjs_PendulumMainWindow" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="statusButton2">
+            <property name="label" translatable="yes">Working...</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="image">icon2</property>
+            <property name="image_position">top</property>
+            <property name="always_show_image">True</property>
+            <signal name="clicked" handler="_onStatusButton2Clicked" object="Gjs_PendulumMainWindow" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </template>
+</interface>
