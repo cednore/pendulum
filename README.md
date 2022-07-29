@@ -9,7 +9,7 @@
 I work in a pretty big team of engineers (> 60 people) in a large office and we use self-hosted mattermost server.
 Sometimes I am too far away from my colleagues to be called shouting or sometimes they are too lazy to walk for ~ 10
 seconds to my desk and check if I am away or not. They keep me asking 'hey, update your mattermost status when you are
-absent', then I am like 'should I make 4 mouse clicks and type ~20 characters for every bathroom breaks or being away
+absent', then I am like 'should I make 4 mouse clicks and type ~ 20 characters for every bathroom breaks or being away
 to help others? no way'. Maybe I am too lazy as well or it isn't too much compared to my habit to wander all across
 the office too often (I normally sit up/down my office chair nearly 40~50 times a day and that's why my nickname is
 **pendulum**).
