@@ -99,4 +99,5 @@ This project is licensed under the **MIT License**.
 - Credit to [@mattermost Team](https://github.com/mattermost) for building such a powerful team collaboration app (also
   made it self-hostable 🤗).
 - Special thanks to those behind [gjs](https://gjs.guide/), you made my life easier 💪
-- Thanks to my colleagues, who were too lazy to call me shouting, prefered checking mattermost status for my absence 🦥
+- Thanks to my colleagues, who were too lazy to call me shouting and prefered checking mattermost status for my absence
+  🦥
