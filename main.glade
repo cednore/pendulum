@@ -5,17 +5,27 @@
   <object class="GtkImage" id="icon0">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="pixbuf">icons/smoking.png</property>
+    <property name="pixbuf">icons/brb.png</property>
   </object>
-  <object class="GtkImage" id="icon1">
+    <object class="GtkImage" id="icon1">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="pixbuf">icons/bath.png</property>
+    <property name="pixbuf">icons/computer.png</property>
   </object>
   <object class="GtkImage" id="icon2">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="pixbuf">icons/house_with_garden.png</property>
+    <property name="pixbuf">icons/zzz.png</property>
+  </object>
+  <object class="GtkImage" id="icon3">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">icons/smoking.png</property>
+  </object>
+  <object class="GtkImage" id="icon4">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">icons/bath.png</property>
   </object>
   <template class="Gjs_PendulumMainWindow" parent="GtkWindow">
     <property name="type">popup</property>
@@ -39,7 +49,7 @@
         <property name="layout_style">center</property>
         <child>
           <object class="GtkButton" id="statusButton0">
-            <property name="label" translatable="yes">Smoking... (Hotkey: s)</property>
+            <property name="label" translatable="yes">BRB soon. (Hotkey: b)</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="receives_default">True</property>
@@ -56,7 +66,7 @@
         </child>
         <child>
           <object class="GtkButton" id="statusButton1">
-            <property name="label" translatable="yes">W.C (Hotkey: b)</property>
+            <property name="label" translatable="yes">Working... (Hotkey: w)</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="receives_default">True</property>
@@ -73,7 +83,7 @@
         </child>
         <child>
           <object class="GtkButton" id="statusButton2">
-            <property name="label" translatable="yes">Working... (Hotkey: w)</property>
+            <property name="label" translatable="yes">Sleeping... (Hotkey: z)</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="receives_default">True</property>
@@ -86,6 +96,40 @@
             <property name="expand">True</property>
             <property name="fill">True</property>
             <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="statusButton3">
+            <property name="label" translatable="yes">Smoking... (Hotkey: s)</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="receives_default">True</property>
+            <property name="image">icon3</property>
+            <property name="image_position">top</property>
+            <property name="always_show_image">True</property>
+            <signal name="clicked" handler="_onStatusButton3Clicked" object="Gjs_PendulumMainWindow" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="statusButton4">
+            <property name="label" translatable="yes">W.C (Hotkey: c)</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="receives_default">True</property>
+            <property name="image">icon4</property>
+            <property name="image_position">top</property>
+            <property name="always_show_image">True</property>
+            <signal name="clicked" handler="_onStatusButton4Clicked" object="Gjs_PendulumMainWindow" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">4</property>
           </packing>
         </child>
       </object>

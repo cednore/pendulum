@@ -35,23 +35,40 @@ const lockScreen = () => {
 const onStatusButtonClicked = (index) => {
   const statuses = [
     {
+      emoji: 'brb',
+      text: 'BRB soon.',
+      lock: true,
+    },
+    {
+      emoji: 'computer',
+      text: 'Working...',
+      lock: false,
+    },
+    {
+      emoji: 'zzz',
+      text: 'Sleeping...',
+      lock: true,
+    },
+    {
       emoji: 'smoking',
       text: 'Smoking...',
+      lock: true,
     },
     {
       emoji: 'bath',
       text: 'W.C',
-    },
-    {
-      emoji: 'house_with_garden',
-      text: 'Working...',
+      lock: true,
     },
   ];
 
   const status = statuses[index];
   if (status) {
     updateCustomStatus(status.emoji, status.text);
-    lockScreen();
+
+    if (status.lock) {
+      lockScreen();
+    }
+
     Gtk.main_quit();
   }
 };
@@ -104,6 +121,24 @@ const PendulumMainWindow = GObject.registerClass(
     }
 
     /**
+     * When statusButton3 is clicked.
+     *
+     * @param {Gtk.Button} button
+     */
+    _onStatusButton3Clicked(button) {
+      onStatusButtonClicked(3);
+    }
+
+    /**
+     * When statusButton4 is clicked.
+     *
+     * @param {Gtk.Button} button
+     */
+    _onStatusButton4Clicked(button) {
+      onStatusButtonClicked(4);
+    }
+
+    /**
      * Handle keypress.
      *
      * @param {Gtk.Widget} widget - Main window widget
@@ -114,12 +149,16 @@ const PendulumMainWindow = GObject.registerClass(
 
       if (keyval === Gdk.KEY_Escape) {
         Gtk.main_quit();
-      } else if (keyval === Gdk.KEY_s) {
-        onStatusButtonClicked(0);
       } else if (keyval === Gdk.KEY_b) {
-        onStatusButtonClicked(1);
+        onStatusButtonClicked(0);
       } else if (keyval === Gdk.KEY_w) {
+        onStatusButtonClicked(1);
+      } else if (keyval === Gdk.KEY_z) {
         onStatusButtonClicked(2);
+      } else if (keyval === Gdk.KEY_s) {
+        onStatusButtonClicked(3);
+      } else if (keyval === Gdk.KEY_c) {
+        onStatusButtonClicked(4);
       }
     }
   }
@@ -133,6 +172,12 @@ mainWindow.connect('destroy', () => Gtk.main_quit());
 
 // Show window
 mainWindow.show_all();
+
+// Set normal BRB status when times out (5 seconds)
+GLib.timeout_add(GLib.PRIORITY_DEFAULT, 5000, () => {
+  onStatusButtonClicked(0);
+  return GLib.SOURCE_REMOVE;
+});
 
 // Start Gtk main loop
 Gtk.main();
