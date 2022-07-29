@@ -37,6 +37,7 @@ const PendulumMainWindow = GObject.registerClass(
      */
     _onStatusButton0Clicked(button) {
       GLib.spawn_command_line_async(`node update_custom_status.js "smoking" "Smoking..."`);
+      GLib.spawn_command_line_async(`xdg-screensaver lock`);
       Gtk.main_quit();
     }
 
@@ -47,6 +48,7 @@ const PendulumMainWindow = GObject.registerClass(
      */
     _onStatusButton1Clicked(button) {
       GLib.spawn_command_line_async(`node update_custom_status.js "bath" "W.C"`);
+      GLib.spawn_command_line_async(`xdg-screensaver lock`);
       Gtk.main_quit();
     }
 
@@ -57,6 +59,7 @@ const PendulumMainWindow = GObject.registerClass(
      */
     _onStatusButton2Clicked(button) {
       GLib.spawn_command_line_async(`node update_custom_status.js "house_with_garden" "Working..."`);
+      GLib.spawn_command_line_async(`xdg-screensaver lock`);
       Gtk.main_quit();
     }
   }
