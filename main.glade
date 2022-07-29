@@ -18,14 +18,19 @@
     <property name="pixbuf">icons/house_with_garden.png</property>
   </object>
   <template class="Gjs_PendulumMainWindow" parent="GtkWindow">
-    <property name="can_focus">False</property>
     <property name="type">popup</property>
+    <property name="visible">True</property>
+    <property name="can_focus">True</property>
+    <property name="has_focus">True</property>
+    <property name="is_focus">True</property>
+    <property name="can_default">True</property>
+    <property name="has_default">True</property>
     <property name="window_position">center-always</property>
-    <property name="destroy_with_parent">True</property>
-    <property name="type_hint">splashscreen</property>
+    <property name="type_hint">dialog</property>
     <property name="skip_taskbar_hint">True</property>
     <property name="urgency_hint">True</property>
     <property name="gravity">center</property>
+    <signal name="key-press-event" handler="_onKeyPress" swapped="no"/>
     <child>
       <object class="GtkButtonBox" id="statusButtons">
         <property name="visible">True</property>
@@ -34,9 +39,9 @@
         <property name="layout_style">center</property>
         <child>
           <object class="GtkButton" id="statusButton0">
-            <property name="label" translatable="yes">Smoking...</property>
+            <property name="label" translatable="yes">Smoking... (Hotkey: s)</property>
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
+            <property name="can_focus">False</property>
             <property name="receives_default">True</property>
             <property name="image">icon0</property>
             <property name="image_position">top</property>
@@ -51,9 +56,9 @@
         </child>
         <child>
           <object class="GtkButton" id="statusButton1">
-            <property name="label" translatable="yes">W.C</property>
+            <property name="label" translatable="yes">W.C (Hotkey: b)</property>
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
+            <property name="can_focus">False</property>
             <property name="receives_default">True</property>
             <property name="image">icon1</property>
             <property name="image_position">top</property>
@@ -68,9 +73,9 @@
         </child>
         <child>
           <object class="GtkButton" id="statusButton2">
-            <property name="label" translatable="yes">Working...</property>
+            <property name="label" translatable="yes">Working... (Hotkey: w)</property>
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
+            <property name="can_focus">False</property>
             <property name="receives_default">True</property>
             <property name="image">icon2</property>
             <property name="image_position">top</property>
