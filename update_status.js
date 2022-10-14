@@ -43,6 +43,6 @@ updateCustomStatus(
   process.env.MATTERMOST_BASEURL,
   process.env.MATTERMOST_USERNAME,
   process.env.MATTERMOST_PASSWORD,
-  process.argv[2], // Assuming the third argv is the emoji
-  process.argv[3] // Assuming the fourth argv is the text
+  process.argv[2] || 'computer', // Assuming the third argv is the emoji
+  process.argv[3] || 'Working...' // Assuming the fourth argv is the text
 );

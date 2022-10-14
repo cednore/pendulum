@@ -17,7 +17,7 @@ const [, mainWindowTemplate] = mainWindowTemplateFile.load_contents(null);
  * @param {string} text  - Custom status text
  */
 const updateCustomStatus = (emoji, text) => {
-  GLib.spawn_command_line_async(`node update_custom_status.js "${emoji}" "${text}"`);
+  GLib.spawn_command_line_async(`node update_status.js "${emoji}" "${text}"`);
 };
 
 /**
